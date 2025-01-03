@@ -14,15 +14,6 @@
 
 <body>
   <div id="root"></div>
-
-  <!-- Add the script below -->
-  <script>
-    // Redirect all unknown routes to index.html
-    if (location.pathname !== '/' && !location.pathname.startsWith('/static/')) {
-      location.replace('/#' + location.pathname);
-    }
-  </script>
-
   <script type="module" src="/src/main.tsx"></script>
 </body>
 
