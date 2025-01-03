@@ -35,6 +35,10 @@ jobs:
     name: Deploy
     needs: build
     runs-on: ubuntu-22.04
+    permissions:
+      contents: read
+      packages: write
+      actions: write
     if: github.ref == 'refs/heads/main'
 
     steps:
