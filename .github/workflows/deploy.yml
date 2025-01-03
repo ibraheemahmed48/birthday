@@ -7,47 +7,43 @@ on:
 
 jobs:
   build:
-    name: Build
+    name: 🚀 Build
     runs-on: ubuntu-22.04
 
     steps:
-      - name: Checkout repo
+      - name: 📥 Checkout repo
         uses: actions/checkout@v3
 
-      - name: Setup Node
+      - name: ⚙️ Setup Node
         uses: actions/setup-node@v3
 
-      - name: Install dependencies
+      - name: 📦 Install dependencies
         uses: bahmutov/npm-install@v1
 
-      - name: Build project
+      - name: 🏗️ Build project
         run: npm run build
 
-      - name: Upload production-ready build files
+      - name: 📤 Upload production-ready build files
         uses: actions/upload-artifact@v4
         with:
           name: production-files
           path: ./dist
 
   deploy:
-    name: Deploy
+    name: 🌐 Deploy
     needs: build
     runs-on: ubuntu-22.04
     if: github.ref == 'refs/heads/main'
 
     steps:
-      - name: Download artifact
+      - name: 📥 Download artifact
         uses: actions/download-artifact@v4
         with:
           name: production-files
           path: ./dist
 
-      - name: Deploy to GitHub Pages
+      - name: 🚀 Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          server: ${{ secrets.GIT_CPANEL_SERVER }}
-          username: ${{ secrets.GIT_USERNAME }}
-          password: ${{ secrets.GIT_SERVER_URL }}
-          protocol: ${{secrets.GIT_PROTOCL}}
           publish_dir: ./dist
