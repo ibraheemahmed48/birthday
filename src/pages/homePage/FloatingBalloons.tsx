@@ -190,7 +190,7 @@ const FloatingBalloons = ({ count }: FloatingBalloonsProps) => {
                             fontFamily: 'Pacifico, cursive',
                         }}
                     >
-                        Happy birthday🦉!
+                        Happy birthday🦉! 12
                     </h1>
                     <h1
                         style={{
