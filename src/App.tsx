@@ -21,15 +21,15 @@ const App = () => {
 
   useEffect(() => {
     if (!isLogin || isLogin !== 'true') {
-      navigate('/birthday/login');
+      navigate('/login');
     }
   }, []);
 
   const routes = [
     { path: '/', element: <Login /> },
-    { path: '/birthday/login', element: <Login /> },
+    { path: '/login', element: <Login /> },
     { path: '/birthday', element: <MainPage /> },
-    { path: '/birthday/second', element: <SecondPage /> },
+    { path: '/second', element: <SecondPage /> },
     { path: '*', element: <NotFound /> },
   ];
 
