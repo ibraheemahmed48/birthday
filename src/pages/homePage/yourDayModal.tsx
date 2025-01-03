@@ -10,7 +10,7 @@ interface YourDayModalProps {
 export const YourDayModal = ({ isOpen }: YourDayModalProps) => {
     const navigate = useNavigate();
     const handleClick = () => {
-        navigate('/second');
+        navigate('/birthday/second');
     };
 
     return (

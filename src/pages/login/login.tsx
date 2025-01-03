@@ -12,7 +12,9 @@ const Login = () => {
 
     const navigate = useNavigate();
     const onFinish = (values: FormValues) => {
+        console.log('Success:', values);
         if (values.password === import.meta.env.VITE_APP_PASSWORD) {
+            console.log('Success:', values);
             navigate('/birthday');
             localStorage.setItem('isLogin', "true");
         } else {
